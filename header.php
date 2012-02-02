@@ -16,7 +16,9 @@
 <body >
   <div id="page">
     <header id="header">
-      <h1 id="site-title">HEADER</h1>
+      <h1 id="site-title">
+        HEADER
+      </h1>
       <h2 id="site-description">Description</h2>
     </header>
 
