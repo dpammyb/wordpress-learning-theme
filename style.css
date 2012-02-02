@@ -1,0 +1,49 @@
+/* 
+Theme Name: Class Workshop Theme
+Theme URI: http://hakcinghistory.ca
+Description: Very simple Theme for Hacking History Students
+Version: 0.1
+Author: Matt Price
+Author URI: http://hackinghistory.ca 
+*/
+
+body {
+    text-align: center;
+}
+
+#page {
+    display: block;
+    border: 1px #a2a2a2 solid;
+    width:90%;
+    margin:0px auto;
+}
+
+#header {
+    border: 2px #a2a2a2 solid;
+}
+
+#content {
+    width: 75%;
+    border: 2px #a2a2a2 solid;
+    float: left;
+}
+
+#sidebar {
+    width: 23%;
+    border: 2px #a2a2a2 solid;
+    float: right;
+}
+
+#delimiter {
+    clear: both;
+}
+
+#footer {
+    border: 2px #a2a2a2 solid;
+}
+
+.title {
+    font-size: 11pt;
+    font-family: verdana;
+    font-weight: bold;
+}
