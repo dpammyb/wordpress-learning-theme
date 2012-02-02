@@ -8,7 +8,7 @@
 
 		<div id="sidebar">
           <h2 class="sidebartitle">Here is the Sidebar</h2>          
-        </div><!-- Create some custom HTML or call the_widget().  It's up to you. -->
+        </div>
 
 	<?php endif; ?>	
 
