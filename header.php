@@ -17,9 +17,16 @@
   <div id="page">
     <header id="header">
       <h1 id="site-title">
-        HEADER
+        <a href="<?php bloginfo('url'); ?>">
+          <?php bloginfo('name'); ?>
+        </a>
       </h1>
-      <h2 id="site-description">Description</h2>
+      <h2 id="site-description">
+          <?php bloginfo('description'); ?>        
+      </h2>
+      <nav id="main-menu">
+        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+      </nav>
     </header>
 
   

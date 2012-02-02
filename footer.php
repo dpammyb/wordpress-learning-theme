@@ -1,6 +1,8 @@
-<div id="footer">
+<footer id="footer">
   <h1>FOOTER</h1>
-</div>
+  <p>Powered by madness</p>
+</footer>
+<?php wp_footer(); ?>
 
 </div>
 
