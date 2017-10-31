@@ -1,7 +1,7 @@
 <?php get_header(); ?>
    
   <div id="content">
-    <h1>Main Content Area -- Plus Stupid Notice</h1>
+    <h1>Main Content Area -- Matttest branch</h1>
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <h2>
         <a href="<?php the_permalink(); ?>">
