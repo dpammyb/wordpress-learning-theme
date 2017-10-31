@@ -25,8 +25,9 @@
           <?php bloginfo('description'); ?>        
       </h2>
       <nav id="main-menu">
-        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+          <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
       </nav>
     </header>
 
-  
+    <div id="main">
+        
