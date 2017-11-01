@@ -21,6 +21,8 @@ or, if you have [[https://make.wordpress.org/cli/handbook/installing/][wp-cli]] 
 cd $WORDPRESS_ROOT
 wp theme install-git titaniumbones/wordpress-learning-theme
 #+END_SRC
+** test travis
+garbage only
 * Server-side mass deployment & auto-update
 This very simple theme uses `gulp` and the plugins `gulp-git` and `gulp-repository-watch` to auto-update whenever changes are pushed to the master branch of the repository. To activate this feature, you will need access to the command line. Make your way to the theme directory (~cd $WORDPRESS_ROOT/wp-content/themes/~) and start gulp with:
 #+BEGIN_SRC sh
