@@ -28,7 +28,8 @@ before_script:
 
 # omitting "script:" will default to phpunit
 # use the $DB env variable to determine the phpunit.xml to use
-
+script:
+    - '! find . -type f -name "*.php" -exec php -d error_reporting=32767 -l {} \; 2>&1 >&- | grep "^"'
 
 # configure notifications (email, IRC, campfire etc)
 notifications:
