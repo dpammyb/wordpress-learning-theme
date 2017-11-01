@@ -3,3 +3,30 @@
 This trivial theme highlights some of the basic features of Wordpress and is so simple that you should be able to get started very quickly. 
 
 Looking to update the deployment process so tune in for some changes coming soon.
+
+* Using this theme
+This theme is intended to showcase the most basic possible elements of Wordpress theme development. The theme contains only a bare minimum of files (~styles.css~, ~index.php~, ~header.php~, ~footer.php~, and ~sidebar.php~). All of them are extremely simple and should be readable even by beginners.
+
+This theme is not intended to be used in production, but instead to serve as an introduction to Wordpress themes for absolute beginners. 
+
+* Installation
+To install this theme in your Wordpress installation, simply 
+#+BEGIN_SRC sh
+# replace $WORDPRESS_ROOT with the actual path to your Wordpress installation
+cd $WORDPRESS_ROOT/wp-content/themes/
+git clone https://github.com/titaniumbones/wordpress-learning-theme.git
+#+END_SRC
+or, if you have [[https://make.wordpress.org/cli/handbook/installing/][wp-cli]] and [[https://github.com/afragen/github-updater/][github-updater]] installed,
+#+BEGIN_SRC sh
+cd $WORDPRESS_ROOT
+wp theme install-git titaniumbones/wordpress-learning-theme
+#+END_SRC
+* Server-side mass deployment & auto-update
+This very simple theme uses `gulp` and the plugins `gulp-git` and `gulp-repository-watch` to auto-update whenever changes are pushed to the master branch of the repository. To activate this feature, you will need access to the command line. Make your way to the theme directory (~cd $WORDPRESS_ROOT/wp-content/themes/~) and start gulp with:
+#+BEGIN_SRC sh
+gulp repo-watch
+#+END_SRC
+~gulp-git~ will update your files automatically.
+
+This is only a start, though, since the main purpose of the setup is to allow students to use Github to code without the normal friction associated with coding in Wordpress.  Right now gulpfile.js has to be customized for every installation (to point to the student's repository instead of this central repo). something like a config.env file, or similar could instead be used to set the repository address parameters, and could be written by a bash script on install.  Alternatively, the upstream repo parameters could be read by ~gulp-git~ instead of hard-coded in the ~gulpfile~. In any case, some kind of mechanism needs to be developed for writing these repos via a ~students.csv~ or similar file, which contains information about student github handles. Thisi s still to be written. 
+* 
