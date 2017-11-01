@@ -3,3 +3,5 @@
 This trivial theme highlights some of the basic features of Wordpress and is so simple that you should be able to get started very quickly. 
 
 Looking to update the deployment process so tune in for some changes coming soon.
+
+Adding some text to see if repo-watch auto-updates
