@@ -6,3 +6,4 @@ Looking to update the deployment process so tune in for some changes coming soon
 
 Adding some text to see if repo-watch auto-updates. 
 - didn't work so adding some more to see if gulp-git picks it up
+- oops, syntax error, try again
