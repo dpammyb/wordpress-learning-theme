@@ -21,6 +21,7 @@
   "homepage": "https://github.com/titaniumbones/wordpress-learning-theme#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-git": "^2.4.2",
     "gulp-repository-watch": "0.0.4"
   }
 }
