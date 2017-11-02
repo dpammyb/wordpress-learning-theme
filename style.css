@@ -10,7 +10,7 @@ Author URI: http://hackinghistory.ca
 
 body {
     text-align: center;
-    background: pink;
+    background: #303ce3;
 }
 
 #page {
@@ -108,7 +108,7 @@ body {
 	top: 0;
 }
 #main-menu ul ul a {
-	background: #303ce3;
+	background: #f9f9f9;
 	border-bottom: 1px dotted #ddd;
 	color: #444;
 	font-size: 13px;
@@ -126,11 +126,11 @@ body {
 #main-menu li:hover > a,
 #main-menu a:focus {
 	background: #f9f9f9; /* Show a solid color for older browsers */
-	background: -moz-linear-gradient(#303ce3, #e5e5e5);
-	background: -o-linear-gradient(#303ce3, #e5e5e5);
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#303ce3), to(#e5e5e5)); /* Older webkit syntax */
-	background: -webkit-linear-gradient(#303ce3, #e5e5e5);
-	color: #303ce3;
+	background: -moz-linear-gradient(#f9f9f9, #e5e5e5);
+	background: -o-linear-gradient(#f9f9f9, #e5e5e5);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f9f9f9), to(#e5e5e5)); /* Older webkit syntax */
+	background: -webkit-linear-gradient(#f9f9f9, #e5e5e5);
+	color: #373737;
 }
 #main-menu ul li:hover > ul {
 	display: block;
