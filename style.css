@@ -1,11 +1,11 @@
-/* 
+/*
 Theme Name: Class Workshop Theme
 Theme URI: http://hackinghistory.ca
 GitHub Theme URI: titaniumbones/wordpress-learning-theme
 Description: Very simple Theme for Hacking History Students
 Version: 0.1.1
 Author: Matt Price
-Author URI: http://hackinghistory.ca 
+Author URI: http://hackinghistory.ca
 */
 
 body {
@@ -130,7 +130,7 @@ body {
 	background: -o-linear-gradient(#f9f9f9, #e5e5e5);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f9f9f9), to(#e5e5e5)); /* Older webkit syntax */
 	background: -webkit-linear-gradient(#f9f9f9, #e5e5e5);
-	color: #373737;
+	color: #303ce3;
 }
 #main-menu ul li:hover > ul {
 	display: block;
