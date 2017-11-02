@@ -2,14 +2,52 @@
 
 This trivial theme highlights some of the basic features of Wordpress and is so simple that you should be able to get started very quickly. 
 
-Looking to update the deployment process so tune in for some changes coming soon.
-
 * Using this theme
 This theme is intended to showcase the most basic possible elements of Wordpress theme development. The theme contains only a bare minimum of files (~styles.css~, ~index.php~, ~header.php~, ~footer.php~, and ~sidebar.php~). All of them are extremely simple and should be readable even by beginners.
 
 This theme is not intended to be used in production, but instead to serve as an introduction to Wordpress themes for absolute beginners. 
 
-* Installation
+* Installation for Students. Read Carefully!
+
+Normally it is somewhat tricky and confusing to try to edit Wordpress themes. In order to see your changes, you will need to look at them on a running Wordpress site; but it is much easier to edit theme files on an editor at home. This theme has been set up to allow you to edit your files at home in Atom, using the ~git commit; git push~ workflow we have been working on thus far (though there's a new twist, actually; see below). I'm hoping this workflow will also make sense for the class project, when the time comes.  But the process for getting started has several stages.  
+
+** Clone the theme repository to your local computer
+Unlike last time, *this time you will not make a fork of the main repository*. Instead, we will all be working off of the same repository, but with a separate branch for each student.  
+
+Start by cloning the repository as usual: go to [[https://github.com/HackingHistory/wordpress-learning-theme/][the repo page]] and click the "clone or download" button, then open in Github Desktop.
+*** Background: using Git branches
+We have talked a little bit about the use of branches in git and Github, but you haven't used them much. I have created 10 new branches on this repository, one with each of your names. You will want to work in *the branch with your name*. You can switch branches easily in Github Desktop by clicking on the "Current Branch" tab and choosing "origin/YOURNAME" as the branch you want to check out.
+*** Background: organization privileges
+You will need special privileges to edit this repository. I have tried to add all of you to the "Hacking History" organization and given you write privileges to the repository, but you might need to accept the membership request. check your email or your online Github notifications
+*** Make Sure Everything's Working
+You should now be working on your personal branch. Open any of the theme files in Atom, open the ~git~ tab using ~Packages --> Github --> Toggle Git Tab~ and check to see that the little branch icon in the bottom right corner says your name (and not, say, "master")
+** Install the theme in your Wordpress site using the ~github-updater~ plugin
+
+**I did this for you automatically**
+
+If a theme is available in the Wordpress theme collection we would normally install it using the standard installer. But this theme is terrible - -it will never make it into the Wordpress repositories! And anyway, you want to have it update itself continuously. So instead we will install it using the amazing [[https://github.com/afragen/github-updater/][github-updater plugin]]. All we need to do is navigate to the Github Updater Settings (~Settings --> Github Updater~ in the admin interface. Or you can get there directly by pasting ~https://YOURNAME.hackinghistory.ca/wp-admin/options-general.php?page=github-updater&tab=github_updater_install_theme~ into the browser (but replace ~YOURNAME~ with your actual first name!). 
+
+Then you'll need to tell Github Updater what theme to install. Under ~Install Theme~, 
+** Add your site to the theme repository "webhook"
+A webhook is a special signal that Github sends out when a push or other event is received. So, whenever you push a commit to github you can ask github to tell your website what's happened. Github-updater wil lthen update your theme for you automatically. For this you need to find the "Remote Management" tab of the github Updater settings, under ~Settings --> Github Updater --> Remote Management~ i n the Wordpress admin interface. It will show you a fancy URL that looks something like  this:
+
+~https://matttest.hackinghistory.ca/wp-admin/admin-ajax.php?action=github-updater-update&key=da4d3f49a26c70586d660c2ba5d05c45~
+
+Copy that whole URL and then navigate to this page: https://github.com/HackingHistory/wordpress-learning-theme/settings/hooks
+
+You will need to Add a Webhook (click that button), then paste the URL into the ~Payload URL~ field.  However, you're not quite done! You need to add this text to the end of the URL before it will work:
+
+~&theme=Wordpress-learning-theme~
+
+ Change ~Content Type~ to ~application/json~, then scroll down and click ~Add Webhook~, and you should be done. the next time you push a change to your branch, the theme will update on your site.
+** Syntax Errors
+I've also set up automated testing for syntax errors... but right now I'm not sure you can see the tests. Maybe [[https://travis-ci.org/titaniumbones/wordpress-learning-theme][this link]] will show them to you.  
+
+You can also install the [[https://atom.io/packages/linter-php][php-linter]] plugin for Atom, which will show you any syntax errors while you're typing.
+** Let me know
+I know this is a bit complex. I'm eager to hear whether you ucna make this work! Let me know over Slack!
+
+* Installation (for teachers and the curious)
 To install this theme in your Wordpress installation, simply 
 #+BEGIN_SRC sh
 # replace $WORDPRESS_ROOT with the actual path to your Wordpress installation
@@ -21,7 +59,7 @@ or, if you have [[https://make.wordpress.org/cli/handbook/installing/][wp-cli]] 
 cd $WORDPRESS_ROOT
 wp theme install-git titaniumbones/wordpress-learning-theme
 #+END_SRC
-* Server-side mass deployment & auto-update
+* Server-side mass deployment & auto-update (for teachers)
 This very simple theme uses `gulp` and the plugins `gulp-git` and `gulp-repository-watch` to auto-update whenever changes are pushed to the master branch of the repository. To activate this feature, you will need access to the command line. Make your way to the theme directory (~cd $WORDPRESS_ROOT/wp-content/themes/~) and start gulp with:
 #+BEGIN_SRC sh
 gulp repo-watch
