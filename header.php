@@ -10,8 +10,7 @@
 <!DOCTYPE html> 
 <html>
     <head>
-        <!-- Change the title to something else, maybe
-             <?php bloginfo('name');?> | <?php bloginfo('title') ;>  -->
+        <!-- Change the title to something else -->
         <title>Class theme</title>
         <!-- this next line is a little hard to read. We are asking Wordpress to
              print the web address (URI) of the directory where our stylesheets live.
