@@ -10,7 +10,7 @@ Author URI: http://hackinghistory.ca
 
 body {
     text-align: center;
-    background: #303ce3;
+    background: lightblue;
 }
 
 #page {
@@ -18,7 +18,7 @@ body {
     border: 1px #a2a2a2 solid;
     width:90%;
     margin:0px auto;
-    background: grey;
+    background: white;
 }
 
 #header {
