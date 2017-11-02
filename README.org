@@ -23,23 +23,42 @@ You will need special privileges to edit this repository. I have tried to add al
 You should now be working on your personal branch. Open any of the theme files in Atom, open the ~git~ tab using ~Packages --> Github --> Toggle Git Tab~ and check to see that the little branch icon in the bottom right corner says your name (and not, say, "master")
 ** Install the theme in your Wordpress site using the ~github-updater~ plugin
 
-**I did this for you automatically**
+**I did this for you semi-automatically. But see troubleshooting, below**
+
+
+You may need to change the branch your theme pulls from. By default, it's set to pull from ~master~. I *hope* that I've automagically set it to pull from ~YOURNAME~ instead. You may still lwant to check, though, and maybe do it manually.
+
+First navigate to the github-updater settings page in Wordpress:
+
+~~Settings --> Github Updater~
+
+[[./images/branch-switching.png]]
+
+make sure that the ~Enable Branch Switching~ box is checked, and save your settings.
+
+Now you can navigate to ~Themes --> Appearance~ and look at the theme settings. You should be able to see an option to switch branches there.  
 
 If a theme is available in the Wordpress theme collection we would normally install it using the standard installer. But this theme is terrible - -it will never make it into the Wordpress repositories! And anyway, you want to have it update itself continuously. So instead we will install it using the amazing [[https://github.com/afragen/github-updater/][github-updater plugin]]. All we need to do is navigate to the Github Updater Settings (~Settings --> Github Updater~ in the admin interface. Or you can get there directly by pasting ~https://YOURNAME.hackinghistory.ca/wp-admin/options-general.php?page=github-updater&tab=github_updater_install_theme~ into the browser (but replace ~YOURNAME~ with your actual first name!). 
 
-Then you'll need to tell Github Updater what theme to install. Under ~Install Theme~, 
 ** Add your site to the theme repository "webhook"
-A webhook is a special signal that Github sends out when a push or other event is received. So, whenever you push a commit to github you can ask github to tell your website what's happened. Github-updater wil lthen update your theme for you automatically. For this you need to find the "Remote Management" tab of the github Updater settings, under ~Settings --> Github Updater --> Remote Management~ i n the Wordpress admin interface. It will show you a fancy URL that looks something like  this:
+A webhook is a special signal that Github sends out when a push or other event is received. So, whenever you push a commit to github you can ask github to tell your website what's happened. Github-updater will then update your theme for you automatically.
+
+Please follow these directions *carefully* -- there are some fiddly steps and you need to get them exactly right. 
+
+For this you need to find the "Remote Management" tab of the github Updater settings, under ~Settings --> Github Updater --> Remote Management~ i n the Wordpress admin interface. It will show you a fancy URL that looks something like  this:
 
 ~https://matttest.hackinghistory.ca/wp-admin/admin-ajax.php?action=github-updater-update&key=da4d3f49a26c70586d660c2ba5d05c45~
 
 Copy that whole URL and then navigate to this page: https://github.com/HackingHistory/wordpress-learning-theme/settings/hooks
 
-You will need to Add a Webhook (click that button), then paste the URL into the ~Payload URL~ field.  However, you're not quite done! You need to add this text to the end of the URL before it will work:
+You will need to ~Add a Webhook~ (click that button), then paste the URL into the ~Payload URL~ field.  However, you're not quite done! You need to add this text to the end of the URL before it will work:
 
-~&theme=Wordpress-learning-theme~
+~&theme=Wordpress-learning-theme&committish=YOURNAME~ (again, replace ~YOURNAME~ with your actual first name (lowercase))
 
  Change ~Content Type~ to ~application/json~, then scroll down and click ~Add Webhook~, and you should be done. the next time you push a change to your branch, the theme will update on your site.
+
+** Troubleshooting
+It may be that your
 ** Syntax Errors
 I've also set up automated testing for syntax errors... but right now I'm not sure you can see the tests. Maybe [[https://travis-ci.org/titaniumbones/wordpress-learning-theme][this link]] will show them to you.  
 
