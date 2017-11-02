@@ -29,4 +29,10 @@ gulp repo-watch
 ~gulp-git~ will update your files automatically.
 
 This is only a start, though, since the main purpose of the setup is to allow students to use Github to code without the normal friction associated with coding in Wordpress.  Right now gulpfile.js has to be customized for every installation (to point to the student's repository instead of this central repo). something like a config.env file, or similar could instead be used to set the repository address parameters, and could be written by a bash script on install.  Alternatively, the upstream repo parameters could be read by ~gulp-git~ instead of hard-coded in the ~gulpfile~. In any case, some kind of mechanism needs to be developed for writing these repos via a ~students.csv~ or similar file, which contains information about student github handles. Thisi s still to be written. 
-* 
+
+An alternative approach is to use a Github webhook to trigger an update via github-updater. This requires some user intervention but is much simpler, and we are using this process currently. Students will need to add the github-updater API endpoint URL to the webhook for ~push~ events [[https://github.com/afragen/github-updater/wiki/Remote-Management---RESTful-Endpoints#restful-endpoints-for-remote-management][as descripbed here]]. This is a url of the form
+ ~http://website.full.url/wp-admin/admin-ajax.php?action=github-updater-update&key=76bb2b7c819c36ee37292b6978a4ad61~
+
+and can be found in the github-updater plugin settings. 
+
+Further discussion of various options can be found in #9 and to some extent in #3.
