@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
   <div id="content">
-    <h1>Main Content Area -- My Site</h1>
+    <h1> Welcome to My Site</h1>
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <h2>
         <a href="<?php the_permalink(); ?>">
