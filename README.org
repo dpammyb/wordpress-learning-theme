@@ -23,14 +23,14 @@ You will need special privileges to edit this repository. I have tried to add al
 You should now be working on your personal branch. Open any of the theme files in Atom, open the ~git~ tab using ~Packages --> Github --> Toggle Git Tab~ and check to see that the little branch icon in the bottom right corner says your name (and not, say, "master")
 ** Install the theme in your Wordpress site using the ~github-updater~ plugin
 
-**I did this for you semi-automatically. But see troubleshooting, below**
+*I did this for you semi-automatically. But see troubleshooting, below*
 
 
-You may need to change the branch your theme pulls from. By default, it's set to pull from ~master~. I *hope* that I've automagically set it to pull from ~YOURNAME~ instead. You may still lwant to check, though, and maybe do it manually.
+You may need to change the branch your theme pulls from. By default, it's set to pull from ~master~. I *hope* that I've automagically set it to pull from ~YOURNAME~ instead. You may still want to check, though, and maybe do it manually.
 
 First navigate to the github-updater settings page in Wordpress:
 
-~~Settings --> Github Updater~
+~Settings --> Github Updater~
 
 [[./images/branch-switching.png]]
 
@@ -53,7 +53,7 @@ Copy that whole URL and then navigate to this page: https://github.com/HackingHi
 
 You will need to ~Add a Webhook~ (click that button), then paste the URL into the ~Payload URL~ field.  However, you're not quite done! You need to add this text to the end of the URL before it will work:
 
-~&theme=Wordpress-learning-theme&committish=YOURNAME~ (again, replace ~YOURNAME~ with your actual first name (lowercase))
+~&theme=wordpress-learning-theme&committish=YOURNAME~ (again, replace ~YOURNAME~ with your actual first name (lowercase))
 
  Change ~Content Type~ to ~application/json~, then scroll down and click ~Add Webhook~, and you should be done. the next time you push a change to your branch, the theme will update on your site.
 
