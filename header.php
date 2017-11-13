@@ -7,11 +7,11 @@
  */
 ?>
 
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
     <head>
         <!-- Change the title to something else -->
-        <title>Class theme</title>
+        <title>Test Title</title>
         <!-- this next line is a little hard to read. We are asking Wordpress to
              print the web address (URI) of the directory where our stylesheets live.
              Then we add "/style.css" to the end of the href value.  This will result in
@@ -40,7 +40,7 @@
                     </a>
                 </h1>
                 <h2 id="site-description">
-                    <?php bloginfo('description'); ?>        
+                    <?php bloginfo('description'); ?>
                 </h2>
                 <!-- in Wordpress menus are almost always embedded in a <nav> element -->
                 <nav id="main-menu">
@@ -52,4 +52,3 @@
                  notice how none of these tags is actually closed.
                  that's because the closing all happens in footer.php-->
             <div id="main">
-                
