@@ -1,7 +1,7 @@
 <!-- make an ugly footer -->
 <footer id="footer">
   <h1>FOOTER</h1>
-  <p>Powered by greatness</p>
+  <p>Powered by abc123</p>
 </footer>
 <!-- do some Wordpress magic -->
 <?php wp_footer(); ?>
