@@ -11,7 +11,7 @@
 <html>
     <head>
         <!-- Change the title to something else -->
-        <title>KCC</title>
+        <title>TEst Test</title>
         <!-- this next line is a little hard to read. We are asking Wordpress to
              print the web address (URI) of the directory where our stylesheets live.
              Then we add "/style.css" to the end of the href value.  This will result in
